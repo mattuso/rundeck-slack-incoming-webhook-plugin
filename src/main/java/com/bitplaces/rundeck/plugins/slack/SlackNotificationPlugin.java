@@ -19,6 +19,7 @@ package com.bitplaces.rundeck.plugins.slack;
 
 import com.dtolabs.rundeck.core.plugins.Plugin;
 import com.dtolabs.rundeck.core.plugins.configuration.PropertyScope;
+import com.dtolabs.rundeck.plugins.ServiceNameConstants;
 import com.dtolabs.rundeck.plugins.descriptions.PluginDescription;
 import com.dtolabs.rundeck.plugins.descriptions.PluginProperty;
 import com.dtolabs.rundeck.plugins.notification.NotificationPlugin;
@@ -47,11 +48,6 @@ import freemarker.template.TemplateException;
 @PluginDescription(title="Slack Incoming WebHook", description="Sends Rundeck Notifications to Slack")
 public class SlackNotificationPlugin implements NotificationPlugin {
 
-//    private static final String SLACK_API_BASE = ".slack.com/";
-//    private static final String SLACK_API_URL_SCHEMA = "https://";
-//    private static final String SLACK_API_WEHOOK_PATH = "services/hooks/incoming-webhook";
-//    private static final String SLACK_API_TOKEN = "?token=%s";
-
     private static final String SLACK_MESSAGE_COLOR_GREEN = "good";
     private static final String SLACK_MESSAGE_COLOR_YELLOW = "warning";
     private static final String SLACK_MESSAGE_COLOR_RED = "danger";
@@ -71,7 +67,7 @@ public class SlackNotificationPlugin implements NotificationPlugin {
     @PluginProperty(
             title = "WebHook URL",
             description = "Slack Incoming WebHook URL",
-            required = true)
+            scope = PropertyScope.Framework)
     private String webhook_url;
 
     /**
