@@ -20,13 +20,19 @@ See the [Included Plugins | Rundeck Documentation](http://rundeck.org/docs/plugi
 
 
 ## Configuration
-This plugin uses Slack incoming-webhooks. Create a new webhook and copy the provided url.
+This plugin uses Slack incoming-webhooks.
+Create a new webhook and webhook_url is set in project.properties file for your project.
+
+```
+framework.plugin.Notification.SlackNotification.webhook_url = https://hooks.slack.com/services/T00000000/B00000000/E00000000000000000000000
+```
 
 ![configuration](config.png)
 
 The only required configuration settings are:
 
-- `WebHook URL`: Slack incoming-webhook URL.
+- `WebHook URL`: Slack incoming-webhook URL. (in project.properties)
+- `Channel`: Notification #channel (Default: in slack settings)
 
 ## Slack message example.
 
