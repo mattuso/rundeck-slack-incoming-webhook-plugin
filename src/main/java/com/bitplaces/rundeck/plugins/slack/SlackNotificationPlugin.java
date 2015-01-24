@@ -53,7 +53,6 @@ public class SlackNotificationPlugin implements NotificationPlugin {
     private static final String SLACK_MESSAGE_COLOR_RED = "danger";
 
     private static final String SLACK_MESSAGE_FROM_NAME = "Rundeck";
-//    private static final String SLACK_EXT_MESSAGE_TEMPLATE_PATH = "/var/lib/rundeck/libext/templates";
     private static final String SLACK_MESSAGE_TEMPLATE = "slack-incoming-message.ftl";
 
     private static final String TRIGGER_START = "start";
@@ -69,6 +68,11 @@ public class SlackNotificationPlugin implements NotificationPlugin {
             description = "Slack Incoming WebHook URL",
             scope = PropertyScope.Framework)
     private String webhook_url;
+
+    @PluginProperty(
+            title = "Channel",
+            description = 'Target #channel (default: incoming-webHook settings)')
+    private String chennel;
 
     /**
      * Sends a message to a Slack room when a job notification event is raised by Rundeck.
