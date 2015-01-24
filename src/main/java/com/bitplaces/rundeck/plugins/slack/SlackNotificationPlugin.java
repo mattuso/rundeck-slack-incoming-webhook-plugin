@@ -71,7 +71,7 @@ public class SlackNotificationPlugin implements NotificationPlugin {
 
     @PluginProperty(
             title = "Channel",
-            description = 'Target #channel (default: incoming-webHook settings)')
+            description = "Target #channel (default: incoming-webHook settings)")
     private String chennel;
 
     /**
