@@ -44,7 +44,7 @@ import freemarker.template.TemplateException;
  *
  * @author Hayden Bakkum
  */
-@Plugin(service= "ServiceNameConstants.Notification", name="SlackNotification")
+@Plugin(service= ServiceNameConstants.Notification, name="SlackNotification")
 @PluginDescription(title="Slack Incoming WebHook", description="Sends Rundeck Notifications to Slack")
 public class SlackNotificationPlugin implements NotificationPlugin {
 
